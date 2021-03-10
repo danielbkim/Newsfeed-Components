@@ -117,6 +117,15 @@ const articleMaker = function(obj){
     ${obj.secondParagraph}
     ${obj.thirdParagraph}
   <span class="expandButton">+</span>`
+
+  // Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
+  // This listener should toggle the class 'article-open' on div.article.
+  const span = article.querySelector('.expandButton');
+  span.addEventListener('click', function(event){
+    console.log(event.target);
+    article.classList.toggle('article-open');
+  });
+
   // return the div element
   return article;
 };
@@ -131,8 +140,7 @@ data.forEach(function(article){
   articles.appendChild(singleArticle);
 });
 
-  // Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
-  // This listener should toggle the class 'article-open' on div.article.
+  
 
   // Step 3: Don't forget to return something from your function!
 
