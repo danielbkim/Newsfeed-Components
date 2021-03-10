@@ -107,22 +107,22 @@ const data = [
 const articleMaker = function(obj){
   // create a div element to store HTML
   const article = document.createElement('div');
-  console.log(article);
+  // console.log(article);
   // add className to article
   article.classList.add('article');
   // use innerHTML to add HTML variable onto the div using string interpolation
   article.innerHTML = `<h2>${obj.title}</h2>
   <p class="date">${obj.date}</p>
-    ${obj.firstParagraph}
-    ${obj.secondParagraph}
-    ${obj.thirdParagraph}
+    <p>${obj.firstParagraph}</p>
+    <p>${obj.secondParagraph}</p>
+    <p>${obj.thirdParagraph}</p>
   <span class="expandButton">+</span>`
 
   // Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   // This listener should toggle the class 'article-open' on div.article.
   const span = article.querySelector('.expandButton');
-  span.addEventListener('click', function(event){
-    console.log(event.target);
+  span.addEventListener('click', function(){
+    // console.log(event.target);
     article.classList.toggle('article-open');
   });
 
